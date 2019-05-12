@@ -113,7 +113,7 @@ button:active {
 
 .left {
   left: 0;
-  width: 45%;
+  width: 50%;
   background-color: #eee;
   overflow-x: auto;
   overflow-y: auto;
@@ -121,7 +121,7 @@ button:active {
 
 .right {
   right: 0;
-  width: 55%;
+  width: 50%;
   background-color: #ddd;
   overflow-y: auto;
   overflow-x: auto;
