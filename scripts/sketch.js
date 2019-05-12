@@ -126,16 +126,16 @@ function setup() {
 
 // Default TM Description
 var defaultTM =
-  `- q1 qA qR       Language:  L = {0^2^n | n >= 0}
-q1 0 q2 - R    How this format works:
-q2 - qA - R    - First line consists of the symbol
-q2 0 q3 x R      used to represent the blank, the 
-q2 x q2 x R      initial state, accept state and 
-q3 - q5 - L      reject state
-q3 0 q4 0 R    - All the following lines consist  
-q3 x q3 x R      of transitions, in the same order
-q4 0 q3 x R      as transitions from Sipser
-q4 x q4 x R      state char -> state char dir 
-q5 - q2 - R    Everything after the 5th col is 
-q5 0 q5 0 L    ignored. Empty line at the end 
+`- q1 qA qR       Language:  L = {0^2^n | n >= 0}
+q1 0 q2 - R
+q2 - qA - R 
+q2 0 q3 x R 
+q2 x q2 x R     Click 'tm2file' above for additional
+q3 - q5 - L      information on the format required
+q3 0 q4 0 R  
+q3 x q3 x R
+q4 0 q3 x R 
+q4 x q4 x R
+q5 - q2 - R
+q5 0 q5 0 L
 q5 x q5 x L`
