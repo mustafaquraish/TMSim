@@ -27,9 +27,9 @@ function updateText() {
   // tempTape = tempTape.map((x) => { return pad(x, 2); });
   var newLine = "Step " + pad(STEPS, 3) + ":" + SPACE.repeat(4) + tempTape.join(SPACE)
   if (curState == acceptState) {
-    newLine += "<br> <p style='text-align:center; padding-top: 20pt;'>Accepted</p>";
+    newLine += "<br> <p style='text-align:center; padding-top: 20pt; color: #00a000;'>Accepted</p>";
   } else if (curState == rejectState) {
-    newLine += "<br> <p style='text-align:center; padding-top: 20pt;'>Rejected</p>";
+    newLine += "<br> <p style='text-align:center; padding-top: 20pt; color: #a00000;'>Rejected</p>";
   }
   outText.html(oldText + "<br>" + newLine);
   
