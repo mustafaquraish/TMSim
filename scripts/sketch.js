@@ -23,7 +23,7 @@ function updateText() {
   /* Adds the text representation of the current state to output */
   var oldText = outText.html();
   var tempTape = tape.slice();
-  tempTape.splice(curPos, 0, curState);
+  tempTape.splice(curPos, 0, "<span style='color: #ff0000'>" + curState + "</span>");
   // tempTape = tempTape.map((x) => { return pad(x, 2); });
   var newLine = "Step " + pad(STEPS, 3) + ":" + SPACE.repeat(4) + tempTape.join(SPACE)
   if (curState == acceptState) {
