@@ -1,6 +1,6 @@
-- q0 qA qR
-q0 1 q1 A R
-q0 B q4 B R
+- q0 qA qR        Language: 
+q0 1 q1 A R          L = {1^n 0^n 1^n | n >= 0}
+q0 B q4 B R       eg: 101, 110011, 111000111, ...
 q1 1 q1 1 R
 q1 B q1 B R
 q1 0 q2 B R
