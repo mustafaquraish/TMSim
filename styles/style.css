@@ -26,11 +26,12 @@ h2 {
 }
 
 textarea {
+  font-family: 'Inconsolata', monospace;
   margin-top: 5pt;
   width: 80%;
   height: 300px;
   padding: 10pt;
-  font-size: 14pt;
+  font-size: 15pt;
   border: 2px solid #ccc;
   border-radius: 10px;
   background-color: #f8f8f8;
