@@ -1,25 +1,13 @@
-- q1 qA qR  TM M_2 from Sipser, page 172
-q1 0 q2 - R  1 transition from q1
-q2 - qA - R \
-q2 0 q3 x R  } 3 transitions from q2
-q2 x q2 x R /
-q3 - q5 - L \
-q3 0 q4 0 R  } 3 transitions from q3
-q3 x q3 x R /
-q4 0 q3 x R \ 2 transitions from q4
-q4 x q4 x R /
-q5 - q2 - R \
-q5 0 q5 0 L  } 3 transitions from q5
-q5 x q5 x L /
+- q1 qA qR          TM M_2 from Sipser, page 172
+q1 0 q2 - R
+q2 - qA - R 
+q2 0 q3 x R 
+q2 x q2 x R                Language: 
+q3 - q5 - L    L = { 0^2^n | n is a natural number }
+q3 0 q4 0 R         
+q3 x q3 x R
+q4 0 q3 x R 
+q4 x q4 x R
+q5 - q2 - R
+q5 0,x q5 . L
 
-Language of this TM: L = { 0^2^n | n is a natural number }
-
-Note 1: We're using the minus sign ('-') as the blank.
-Note 2: See how any text
-  * after the fourth token on the first line, or
-  * after the fifth token on subsequent lines, or
-  * after an empty line
- is treated as comments (i.e., ignored) by the program tm.py.
- ***  This means you can include comments in your TM descriptions.  ***
-Note 3: Transitions to the reject state (qR) need not be explicitly given.
- The program makes these transitions by default.

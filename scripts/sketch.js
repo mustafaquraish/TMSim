@@ -22,10 +22,14 @@ function pad(inp, len) {
 function updateText() {
   /* Adds the text representation of the current config to output */
   var oldText = outText.html();
-  var tempTape = tape.slice();
-  tempTape.splice(curPos, 0, "<span style='color: #0000ff'>" + curState + "</span>");
-  // tempTape = tempTape.map((x) => { return pad(x, 2); });
-  var newLine = "Step " + pad(STEPS, 3) + ":" + SPACE.repeat(4) + tempTape.join(SPACE)
+
+  // Add the state in the correct position
+  var newLine = SPACE.repeat(13 + 2*curPos) + "<span style='color: #0000ff;" +
+               "font-size: 12pt; margin=0'>" + curState + "</span> <br>"
+  // Print the tape out to the screen
+  newLine += "Step " + pad(STEPS, 3) + ":" + SPACE.repeat(4) + tape.join(SPACE) + "<br>"
+
+  // Print out accept/reject if done
   if (curState == acceptState) {
     newLine += "<br> <p style='text-align:center; padding-top: 20pt; color: #00a000;'>Accepted</p>";
   } else if (curState == rejectState) {
@@ -126,7 +130,7 @@ function setup() {
 
 // Default TM Description
 var defaultTM =
-`- q1 qA qR       Language:  L = {0^2^n | n >= 0}
+  `- q1 qA qR       Language:  L = {0^2^n | n >= 0}
 q1 0 q2 - R
 q2 - qA - R 
 q2 0 q3 x R 
@@ -137,5 +141,4 @@ q3 x q3 x R
 q4 0 q3 x R 
 q4 x q4 x R
 q5 - q2 - R
-q5 0 q5 0 L
-q5 x q5 x L`
+q5 0,x q5 . L`

@@ -60,22 +60,36 @@
       <h2>The tm2file format</h2>
       Originally by <a href="http://www.utsc.utoronto.ca/~nick/cscC63/tm/tm2file">Nick Cheng</a>
 
-      <div id="modaltext" style='margin: 40pt;'>
+      <div id="modaltext" style='margin: 40pt; margin-bottom: 20pt;'>
         <p> - The file consists of space-separated strings.</p>
         <p>
           <!-- The first line has 4 columns. The first one represents the string used to denotenthe blank symbol,
           the second is the initial state, the third is the accepting state and the fourth is the rejecting state. -->
           - The first line has 4 columns. It represents in order <br>
-          <span style="font-family: 'Inconsolata', monospace; color: #333">
-            [blank symbol] [initial state] [accept state] [reject state]
+          <span class="code">
+              [blank symbol] [initial state] [accept state] [reject state]
           </span>
         </p>
         <p>
           - All the following lines contain 5 columns. They represent in order <br>
-          <span style="font-family: 'Inconsolata', monospace; color: #333">
-            [current state] [current symbol] [next state] [next symbol] [direction (L/R)]
+          <span class="code">
+              [current state] [current symbol(s)] [next state] [next symbol] [direction (L/R)]
           </span>
         </p>
+
+        <p>
+            - Put a 
+            <span class="code">.</span> 
+            as the next symbol to keep the current symbol unchanged. You can also<br>
+            have multiple comma-seperated current symbols in the 2nd column. For example:<br>
+            <br>
+            <span style="font-family: 'Inconsolata', monospace; color: #333">
+                q5 0 q3 0 L                                <br>
+                q5 1 q3 1 L       ===       q5 0,1,x q3 . L<br> 
+                q5 x q3 x L                                <br> 
+            </span>
+        </p>
+
         <p>
           - An empty line signifies the end of the transitions, and the rest of the file is ignored. Also any<br>
           text after the 5th column is ignored. Comments can be added in these locations if needed.
@@ -84,7 +98,7 @@
         <p>
           - Transitions to the reject state need not be explicitly given. The program defaults to these.
         </p>
-        <p style="margin-top: 30pt;">
+        <p style="margin-top: 30pt; margin-bottom: 0pt;">
           <a href="tm1.txt" download="tm1.txt" > Example 1 </a>   
           <a href="tm2.txt" download="tm2.txt" > Example 2 </a>
         </p>

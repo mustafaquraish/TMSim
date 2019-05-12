@@ -27,18 +27,25 @@ function loadTM(inpStr) {
 
     line = linesArr[c].split(" ");
     let iStt = line[0];
-    let iSym = line[1];
+    let iSyms = line[1];
     let oStt = line[2];
     let oSym = line[3];
     let oDir = line[4];
 
-    let tInp = iStt + "," + iSym;
-    let tOut = oStt + "," + oSym + "," + oDir;
+    for (let iSym of iSyms.split(",")) {
+      let tInp = iStt + "," + iSym;
+      let tOut;
+      if (oSym == ".") {
+        tOut = oStt + "," + iSym + "," + oDir;
+      } else {
+        tOut = oStt + "," + oSym + "," + oDir;
+      }
 
-    if (!transitions) {
-      transitions = createStringDict(tInp, tOut);
-    } else if (!transitions.hasKey(tInp)) {
-      transitions.create(tInp, tOut);
+      if (!transitions) {
+        transitions = createStringDict(tInp, tOut);
+      } else if (!transitions.hasKey(tInp)) {
+        transitions.create(tInp, tOut);
+      }
     }
   }
   // transitions.print();

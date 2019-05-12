@@ -16,6 +16,15 @@ h2 {
   margin-bottom: 0pt;
 }
 
+.code {
+  background-color:white;
+  font-family: 'Inconsolata', monospace; 
+  border-radius: 5px;
+  padding: 2pt;
+  color: #333;
+  text-align: left;
+}
+
 textarea {
   margin-top: 5pt;
   width: 80%;
@@ -57,7 +66,7 @@ body {
   text-align: left;
   font-size: 20pt;
   font-family: 'Inconsolata', monospace;
-  line-height: 150%;
+  line-height: 80%;
   padding: 50pt;
   padding-left: 100pt;
 }
@@ -164,7 +173,7 @@ button:active {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #eee;
   margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
