@@ -1,0 +1,17 @@
+- q0 qA qR
+q0 1 q1 A R
+q0 B q4 B R
+q1 1 q1 1 R
+q1 B q1 B R
+q1 0 q2 B R
+q2 0 q2 0 R
+q2 C q2 C R
+q2 1 q3 C L
+q3 C q3 C L
+q3 B q3 B L
+q3 0 q3 0 L
+q3 1 q3 1 L
+q3 A q0 A R
+q4 B q4 B R
+q4 C q4 C R
+q4 - qA - R

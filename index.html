@@ -8,7 +8,10 @@
   <script src="scripts/p5.dom.min.js" type="text/javascript"></script>
   <script src="scripts/sketch.js" type="text/javascript"></script>
   <script src="scripts/tm.js" type="text/javascript"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inconsolata">
   <link rel="stylesheet" type="text/css" href="styles/style.css">
 
@@ -21,8 +24,9 @@
       <h1> Turing Machine Simulator </h1>
 
       Enter your Turing Machine description here (using
-      <a href="http://www.utsc.utoronto.ca/~nick/cscC63/tm/tm2file">tm2file</a>
-      format)<br>
+      <span id="tm2fileBtn">tm2file</span>
+      format)
+      <br>
       (You can also drag and drop a text file below)<br>
       <textarea name="textarea"></textarea> <br>
       <br>
@@ -44,6 +48,49 @@
     <div class="centered">
       <p id="output"></p>
     </div>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+
+      <h2>The tm2file format</h2>
+      Originally by <a href="http://www.utsc.utoronto.ca/~nick/cscC63/tm/tm2file">Nick Cheng</a>
+
+      <div id="modaltext" style='margin: 40pt;'>
+        <p> - The file consists of space-separated strings.</p>
+        <p>
+          <!-- The first line has 4 columns. The first one represents the string used to denotenthe blank symbol,
+          the second is the initial state, the third is the accepting state and the fourth is the rejecting state. -->
+          - The first line has 4 columns. It represents in order <br>
+          <span style="font-family: 'Inconsolata', monospace; color: #333">
+            [blank symbol] [initial state] [accept state] [reject state]
+          </span>
+        </p>
+        <p>
+          - All the following lines contain 5 columns. They represent in order <br>
+          <span style="font-family: 'Inconsolata', monospace; color: #333">
+            [current state] [current symbol] [next state] [next symbol] [direction (L/R)]
+          </span>
+        </p>
+        <p>
+          - An empty line signifies the end of the transitions, and the rest of the file is ignored. Also any<br>
+          text after the 5th column is ignored. Comments can be added in these locations if needed.
+        </p>
+
+        <p>
+          - Transitions to the reject state need not be explicitly given. The program defaults to these.
+        </p>
+        <p style="margin-top: 30pt;">
+          <a href="tm2file.txt" download="tm2file.txt" > Example file </a>
+        </p>
+        <br>
+      </div>
+    </div>
+
   </div>
 
 </body>

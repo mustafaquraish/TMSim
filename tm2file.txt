@@ -12,6 +12,8 @@ q5 - q2 - R \
 q5 0 q5 0 L  } 3 transitions from q5
 q5 x q5 x L /
 
+Language of this TM: L = { 0^2^n | n is a natural number }
+
 Note 1: We're using the minus sign ('-') as the blank.
 Note 2: See how any text
   * after the fourth token on the first line, or

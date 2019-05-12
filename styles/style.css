@@ -10,6 +10,12 @@ h1 {
   margin-bottom: 40pt;
 }
 
+h2 {
+  font-size: 30pt;
+  margin-top: 20pt;
+  margin-bottom: 0pt;
+}
+
 textarea {
   margin-top: 5pt;
   width: 80%;
@@ -126,4 +132,63 @@ button:active {
   background-color: #ddd;
   overflow-y: auto;
   overflow-x: auto;
+}
+
+#tm2fileBtn, a {
+  background:none!important;
+  color:inherit;
+  border:none; 
+  padding:0!important;
+  font: inherit;
+  /*border is optional*/
+  border-bottom:1px solid #444; 
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Modal Stuff */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.6); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 10px;
+}
+
+#modaltext {
+  font-size: 15pt;
+  padding-left: 100pt;
+  padding-right: 100pt;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
