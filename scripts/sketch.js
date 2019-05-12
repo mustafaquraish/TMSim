@@ -20,7 +20,7 @@ function pad(inp, len) {
 }
 
 function updateText() {
-  /* Adds the text representation of the current state to output */
+  /* Adds the text representation of the current config to output */
   var oldText = outText.html();
   var tempTape = tape.slice();
   tempTape.splice(curPos, 0, "<span style='color: #ff0000'>" + curState + "</span>");
