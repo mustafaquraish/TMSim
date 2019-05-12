@@ -70,8 +70,8 @@ function setup() {
   inTM = select("textarea");
   inTM.dragOver(() => { inTM.style('background-color', '#ccc') });
   inTM.dragLeave(() => { inTM.style('background-color', '#fff') });
-  inTM.drop((file) => { inTM.value("" + file.data) },
-    () => { inTM.style('background-color', '#fff') });
+  inTM.drop((file) => { inTM.value("" + file.data); 
+                        inTM.style('background-color', '#fff') });
 
   // Input String
   inStr = select("#tapeInput");
