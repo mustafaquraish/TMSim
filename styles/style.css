@@ -68,7 +68,7 @@ body {
   font-family: 'Inconsolata', monospace;
   line-height: 80%;
   padding: 50pt;
-  padding-left: 100pt;
+  margin: auto;
 }
 
 button {
@@ -173,7 +173,7 @@ button:active {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #eee;
+  background-color: #e0e0e0;
   margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
