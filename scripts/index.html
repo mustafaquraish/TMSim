@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Turing Machine Simulator</title>
+  <script src="scripts/p5.min.js" type="text/javascript"></script>
+  <script src="scripts/p5.dom.min.js" type="text/javascript"></script>
+  <script src="scripts/sketch.js" type="text/javascript"></script>
+  <script src="scripts/tm.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+</head>
+
+<body>
+
+  <div class="split left">
+    <div class="centered">
+      <h1> Turing Machine Simulator </h1>
+
+      Enter your Turing Machine description here (using
+      <a href="http://www.utsc.utoronto.ca/~nick/cscC63/tm/tm2file">tm2file</a>
+      format)<br>
+      (You can also drag and drop a text file below)<br>
+      <textarea name="textarea"></textarea> <br>
+      <br>
+      Enter the input to the TM <br>
+      <input type="text" id="tapeInput" placeholder="Input to TM"> <br>
+
+      <div id="steps">
+        Maximum Steps: <input type="number" id="maxSteps">
+        <button id="load"> Load </button> <br>
+      </div>
+
+
+      <button id="runOne"> Run One Step </button>
+      <button id="runMax"> Run Max Steps </button>
+    </div>
+  </div>
+
+  <div class="split right" id="right_div">
+    <div class="centered">
+      <p id="output"></p>
+    </div>
+  </div>
+
+
+
+
+
+
+</body>
+
+</html>

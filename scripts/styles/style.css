@@ -1,0 +1,125 @@
+html {
+  height: 100%;
+  margin-left:30pt;
+  margin-right:30pt;
+  font-family: "Computer Modern Sans", sans-serif;
+}
+
+h1 {
+  font-size: 40pt;
+  margin-bottom: 40pt;
+}
+
+textarea {
+  margin-top: 5pt;
+  width: 70%;
+  height: 300px;
+  padding: 10pt;
+  font-size: 14pt;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  resize: none; 
+}
+
+#tapeInput {
+  width: 70%;
+  height: 20pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  text-align: center;
+  height: 20pt;
+  font-size: 14pt;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f8f8f8;
+}
+
+body {
+  font-size: 14pt;
+  text-align: center;
+  margin-left:30pt;
+  margin-right:30pt;
+  align-items: center;
+  height: auto;
+}
+
+#output {
+  text-align: left;
+  font-size: 20pt;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 150%;
+  padding: 50pt;
+  padding-left: 100pt;
+}
+
+button {
+  font-size: 14pt;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  background-color: rgb(192, 192, 192);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px #999;
+}
+
+button:hover {background-color: rgb(163, 163, 163)}
+
+button:active {
+  background-color: rgb(160, 160, 160);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#load {
+  margin: 5pt;
+  height: 24pt;
+  width: 150pt;
+}
+
+#runOne, #runMax {
+  margin: 10pt;
+  margin-top: 50pt;
+  height: 40pt;
+  width: 150pt;
+}
+
+#maxSteps {
+  text-align: center;
+  padding-right: 10pt; 
+  padding-left: 10pt; 
+  margin: 10pt;
+  width: 100pt;
+  height: 20pt;
+  font-size: 14pt;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #eee;
+}
+
+.right {
+  right: 0;
+  background-color: #ddd;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
