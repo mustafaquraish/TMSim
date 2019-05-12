@@ -106,7 +106,7 @@ function setup() {
 
 // Default TM Description
 var defaultTM = 
-`- q1 qA qR
+`- q1 qA qR      Language:  L = {0^2^n | n >= 0}
 q1 0 q2 - R
 q2 - qA - R
 q2 0 q3 x R
