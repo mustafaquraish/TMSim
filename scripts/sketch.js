@@ -106,8 +106,8 @@ function setup() {
 
 // Default TM Description
 var defaultTM = 
-`- q1 qA qR   // blank init_state accept_state reject_state
-q1 0 q2 - R  // cur_state cur_char next_state next_char dir
+`- q1 qA qR
+q1 0 q2 - R
 q2 - qA - R
 q2 0 q3 x R
 q2 x q2 x R
