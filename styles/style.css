@@ -12,7 +12,7 @@ h1 {
 
 textarea {
   margin-top: 5pt;
-  width: 70%;
+  width: 80%;
   height: 300px;
   padding: 10pt;
   font-size: 14pt;
@@ -23,7 +23,7 @@ textarea {
 }
 
 #tapeInput {
-  width: 70%;
+  width: 80%;
   height: 20pt;
   margin-top: 5pt;
   margin-bottom: 5pt;
@@ -34,7 +34,7 @@ textarea {
   font-size: 14pt;
   border: 2px solid #ccc;
   border-radius: 10px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Inconsolata', monospace;
   background-color: #f8f8f8;
 }
 
@@ -50,7 +50,7 @@ body {
 #output {
   text-align: left;
   font-size: 20pt;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Inconsolata', monospace;
   line-height: 150%;
   padding: 50pt;
   padding-left: 100pt;
@@ -100,26 +100,29 @@ button:active {
   border: 2px solid #ccc;
   border-radius: 10px;
   background-color: #f8f8f8;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Inconsolata', monospace;
 }
 
 .split {
   height: 100%;
-  width: 50%;
-  position: fixed;
   z-index: 1;
   top: 0;
   padding-top: 20px;
+  position: fixed;
 }
 
 .left {
   left: 0;
+  width: 45%;
   background-color: #eee;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .right {
   right: 0;
+  width: 55%;
   background-color: #ddd;
-  overflow-y: scroll;
-  overflow-x: scroll;
+  overflow-y: auto;
+  overflow-x: auto;
 }
