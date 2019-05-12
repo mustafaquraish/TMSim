@@ -23,13 +23,13 @@ function updateText() {
   /* Adds the text representation of the current config to output */
   var oldText = outText.html();
   var tempTape = tape.slice();
-  tempTape.splice(curPos, 0, "<span style='color: #ff0000'>" + curState + "</span>");
+  tempTape.splice(curPos, 0, "<span style='color: #0000ff'>" + curState + "</span>");
   // tempTape = tempTape.map((x) => { return pad(x, 2); });
   var newLine = "Step " + pad(STEPS, 3) + ":" + SPACE.repeat(4) + tempTape.join(SPACE)
   if (curState == acceptState) {
     newLine += "<br> <p style='text-align:center; padding-top: 20pt; color: #00a000;'>Accepted</p>";
   } else if (curState == rejectState) {
-    newLine += "<br> <p style='text-align:center; padding-top: 20pt; color: #a00000;'>Rejected</p>";
+    newLine += "<br> <p style='text-align:center; padding-top: 20pt; color: #ff0000;'>Rejected</p>";
   }
   outText.html(oldText + "<br>" + newLine);
 
