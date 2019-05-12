@@ -96,7 +96,7 @@ function setup() {
   // Set defaults...
   inTM.value(defaultTM);
   inStr.value("0000");
-  inMaxSteps.value("1500");
+  inMaxSteps.value("300");
   loadInput();
 }
 
