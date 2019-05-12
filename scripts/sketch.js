@@ -9,20 +9,23 @@ Mustafa Quraish, 2019.
 
 var STEPS = 0;
 var MAX_STEPS = 1500;
+var SPACE = " ";    // Special space character to go around HTML
 
 // These are to interact with the DOM elements
 var loadBtn, oneStepBtn, allStepBtn;
 var outText, inTM, inStr, inMaxSteps;
 
+function pad(inp, len) {
+  return (SPACE.repeat(len) + inp).slice(-len);
+}
 
 function updateText() {
   /* Adds the text representation of the current state to output */
   var oldText = outText.html();
   var tempTape = tape.slice();
   tempTape.splice(curPos, 0, curState);
-  var newLine = "Step " + (("⠀⠀⠀⠀" + STEPS).slice(-3)) + ":" + "&nbsp;".repeat(4) + tempTape.join(" ")
-
-  // var newLine = "Step " + STEPS + " &nbsp; &nbsp; : &nbsp; &nbsp;" + tempTape.join(" ")
+  // tempTape = tempTape.map((x) => { return pad(x, 2); });
+  var newLine = "Step " + pad(STEPS, 3) + ":" + SPACE.repeat(4) + tempTape.join(SPACE)
   if (curState == acceptState) {
     newLine += "<br> <p style='text-align:center; padding-top: 20pt;'>Accepted</p>";
   } else if (curState == rejectState) {
