@@ -8,11 +8,11 @@ Mustafa Quraish, 2019.
 
 
 var STEPS = 0;
-var MAX_ITERS = 1500;
+var MAX_STEPS = 1500;
 
 // These are to interact with the DOM elements
 var loadBtn, oneStepBtn, allStepBtn;
-var outText, inTM, inStr, inMaxIters;
+var outText, inTM, inStr, inMaxSteps;
 
 
 function updateText() {
@@ -20,13 +20,19 @@ function updateText() {
   var oldText = outText.html();
   var tempTape = tape.slice();
   tempTape.splice(curPos, 0, curState);
-  var newLine = "Step " + STEPS + " &nbsp; &nbsp; : &nbsp; &nbsp;" + tempTape.join(" ")
+  var newLine = "Step " + (("⠀⠀⠀⠀" + STEPS).slice(-3)) + ":" + "&nbsp;".repeat(4) + tempTape.join(" ")
+
+  // var newLine = "Step " + STEPS + " &nbsp; &nbsp; : &nbsp; &nbsp;" + tempTape.join(" ")
   if (curState == acceptState) {
-    newLine += "<br> Accepted";
+    newLine += "<br> <p style='text-align:center; padding-top: 20pt;'>Accepted</p>";
   } else if (curState == rejectState) {
-    newLine += "<br> Rejected";
+    newLine += "<br> <p style='text-align:center; padding-top: 20pt;'>Rejected</p>";
   }
   outText.html(oldText + "<br>" + newLine);
+  
+  // Using native JS here instead of P5 to scroll down
+  var objDiv = document.getElementById("right_div");
+  objDiv.scrollTop = objDiv.scrollHeight;
 }
 
 function runStep() {
@@ -42,7 +48,7 @@ function runStep() {
 
 function runMax() {
   /* Runs TM up till it (i) Halts, or (ii) reaches MAX_ITERS steps */
-  for (let s = STEPS; s < MAX_ITERS; s++) {
+  for (let s = STEPS; s < MAX_STEPS; s++) {
     if (!runStep()) {
       break;
     }
@@ -56,10 +62,10 @@ function loadInput() {
   tape = []
   loadTM(inTM.value());
   loadTape(inStr.value());
-  outText.html("Loaded String '" + inStr.value() + "'");
+  outText.html(" <p style='text-align:center;'>Loaded String '" + inStr.value() + "'</p>");
   STEPS = 0;
   updateText();
-  MAX_ITERS = int(inMaxIters.value());
+  MAX_STEPS = int(inMaxSteps.value());
 }
 
 function setup() {
@@ -72,10 +78,9 @@ function setup() {
   inTM.dragLeave(() => { inTM.style('background-color', '#fff') });
   inTM.drop((file) => { inTM.value("" + file.data); 
                         inTM.style('background-color', '#fff') });
-
   // Input String
   inStr = select("#tapeInput");
-  inMaxIters = select("#maxIters");
+  inMaxSteps = select("#maxSteps");
   // Load Button
   loadBtn = select("#load");
   loadBtn.mousePressed(loadInput);
@@ -91,7 +96,7 @@ function setup() {
   // Set defaults...
   inTM.value(defaultTM);
   inStr.value("0000");
-  inMaxIters.value("1500");
+  inMaxSteps.value("1500");
   loadInput();
 }
 
@@ -102,7 +107,7 @@ function setup() {
 // Default TM Description
 var defaultTM = 
 `- q1 qA qR   // blank init_state accept_state reject_state
-q1 0 q2 - R  // cur_state cur_symb next_state next_symb dir
+q1 0 q2 - R  // cur_state cur_char next_state next_char dir
 q2 - qA - R
 q2 0 q3 x R
 q2 x q2 x R
