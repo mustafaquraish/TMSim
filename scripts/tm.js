@@ -89,6 +89,8 @@ function followTransition() {
   }
 
   curState = rejectState;
-  curPos++;
+  if (curPos++ >= tape.length - 1) {
+    tape.push(blankSym);
+  }
   return;
 }
