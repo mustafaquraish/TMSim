@@ -58,6 +58,7 @@ body {
 
 button {
   font-size: 14pt;
+  font-family: "Computer Modern Sans", sans-serif;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
