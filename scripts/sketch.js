@@ -69,7 +69,8 @@ function loadInput() {
   tape = []
   loadTM(inTM.value());
   loadTape(inStr.value());
-  outText.html(" <p style='text-align:center;'>Loaded String '" + inStr.value() + "'</p>");
+  outText.html(" <p style='text-align:center;'>Loaded String '" + inStr.value() + "'<br>"+
+               "_".repeat(26 + inStr.value().length) + "</p>");
   STEPS = 0;
   updateText();
   MAX_STEPS = int(inMaxSteps.value());

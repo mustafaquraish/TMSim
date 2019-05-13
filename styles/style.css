@@ -70,6 +70,9 @@ body {
   line-height: 80%;
   padding: 50pt;
   margin: auto;
+  /* margin-right: 20pt; */
+  white-space: nowrap;
+  display: inline-block;
 }
 
 button {
