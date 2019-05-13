@@ -9,14 +9,14 @@ Mustafa Quraish, 2019.
 
 var STEPS = 0;
 var MAX_STEPS = 1500;
-var SPACE = " ";    // Special space character to go around HTML
+var SPACE = " ";
 
 // These are to interact with the DOM elements
 var loadBtn, oneStepBtn, allStepBtn, infBtn;
 var outText, inTM, inStr, inMaxSteps;
 
 function pad(inp, len) {
-  return (SPACE.repeat(len) + inp).slice(-len);
+  return (" ".repeat(len) + inp).slice(-len);
 }
 
 function updateText() {
@@ -24,18 +24,18 @@ function updateText() {
   var oldText = outText.html();
 
   // Add the state in the correct position
-  var newLine = SPACE.repeat(13 + 2*curPos) + "<span style='color: #0000ff;" +
-               "font-size: 12pt; margin=0'>" + curState + "</span> <br>"
+  var newLine = " ".repeat(13 + 2*curPos) + "<span style='color: #0000ff;" +
+               "font-size: 12pt; margin=0'>" + curState + "</span> \n"
   // Print the tape out to the screen
-  newLine += "Step " + pad(STEPS, 3) + ":" + SPACE.repeat(4) + tape.join(SPACE) + "<br>"
+  newLine += "Step " + pad(STEPS, 3) + ":" + " ".repeat(4) + tape.join(" ") + "\n"
 
   // Print out accept/reject if done
   if (curState == acceptState) {
-    newLine += "<br> <p style='text-align:center; padding-top: 20pt; color: #00a000;'>Accepted</p>";
+    newLine += "\n<p style='text-align:center; padding-top: 20pt; color: #00a000;'>Accepted</p>";
   } else if (curState == rejectState) {
-    newLine += "<br> <p style='text-align:center; padding-top: 20pt; color: #ff0000;'>Rejected</p>";
+    newLine += "\n<p style='text-align:center; padding-top: 20pt; color: #ff0000;'>Rejected</p>";
   }
-  outText.html(oldText + "<br>" + newLine);
+  outText.html(oldText + "\n" + newLine);
 
   // Using native JS here instead of P5 to scroll down
   var objDiv = document.getElementById("right_div");
@@ -69,7 +69,7 @@ function loadInput() {
   tape = []
   loadTM(inTM.value());
   loadTape(inStr.value());
-  outText.html(" <p style='text-align:center;'>Loaded String '" + inStr.value() + "'<br>"+
+  outText.html(" <p style='text-align:center;'>Loaded String '" + inStr.value() + "'\n"+
                "_".repeat(26 + inStr.value().length) + "</p>");
   STEPS = 0;
   updateText();
